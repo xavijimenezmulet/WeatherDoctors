@@ -21,6 +21,9 @@ Additional:
 Objectives:
 
 · How to program, code cleaning, comments etc.
+
 · Library knowledge
+
 · Knowledge of design patterns and architectures
+
 · Project structuring and use of Gradle
