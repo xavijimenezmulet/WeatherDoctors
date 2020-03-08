@@ -2,7 +2,7 @@ package com.xjm.weatherdoctors.application
 
 import com.xjm.weatherdoctors.data.WeatherDataSource
 import com.xjm.weatherdoctors.data.WeatherRepository
-import com.xjm.weatherdoctors.domain.RESTAdapter
+import com.xjm.weatherdoctors.domain.REST.RESTAdapter
 import org.koin.dsl.module
 
 /**

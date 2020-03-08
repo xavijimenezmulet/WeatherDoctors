@@ -1,4 +1,4 @@
-package com.xjm.weatherdoctors.domain
+package com.xjm.weatherdoctors.domain.REST
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -30,7 +30,7 @@ object RESTAdapter {
             .build()
 
         return Retrofit.Builder()
-            .baseUrl("http://api.weatherstack.com")
+            .baseUrl("https://api.darksky.net")
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()

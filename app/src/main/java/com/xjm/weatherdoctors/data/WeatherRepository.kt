@@ -7,5 +7,7 @@ package com.xjm.weatherdoctors.data
  */
 class WeatherRepository(private val dataSource: WeatherDataSource) {
 
+    val key = "e93394f89420bac47cb3274632d77123"
+
     suspend fun getCurrentWeather(){}
 }
