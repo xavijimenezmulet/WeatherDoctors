@@ -1,8 +1,12 @@
 package com.xjm.weatherdoctors.application
 
+import com.xjm.weatherdoctors.commons.utils.WeatherIconUtils
 import com.xjm.weatherdoctors.data.WeatherDataSource
 import com.xjm.weatherdoctors.data.WeatherRepository
 import com.xjm.weatherdoctors.domain.REST.RESTAdapter
+import com.xjm.weatherdoctors.interactors.GetWeatherUseCase
+import com.xjm.weatherdoctors.presentation.dashboard.DashboardViewModel
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 /**
@@ -26,7 +30,7 @@ val repositoryModule = module(override = true) {
 // =====================================================================================================================
 
 val viewModelModule = module(override = true) {
-
+    viewModel { DashboardViewModel(get()) }
 }
 
 // =====================================================================================================================
@@ -34,7 +38,7 @@ val viewModelModule = module(override = true) {
 // =====================================================================================================================
 
 val useCaseModule = module(override = true) {
-
+    factory { GetWeatherUseCase(get()) }
 }
 
 // =====================================================================================================================
@@ -42,5 +46,13 @@ val useCaseModule = module(override = true) {
 // =====================================================================================================================
 
 val dataSourceModule = module(override = true) {
-    factory { RESTAdapter.createService(WeatherDataSource::class.java) }
+    single { RESTAdapter.createService(WeatherDataSource::class.java) }
+}
+
+// =====================================================================================================================
+// Helpers
+// =====================================================================================================================
+
+val utilsModule = module(override = true) {
+    single { WeatherIconUtils(get()) }
 }

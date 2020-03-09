@@ -2,11 +2,12 @@ package com.xjm.weatherdoctors.presentation.splash
 
 import android.animation.Animator
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.lottie.LottieAnimationView
 import com.xjm.weatherdoctors.R
 import com.xjm.weatherdoctors.presentation.dashboard.DashboardActivity
+import kotlinx.android.synthetic.main.activity_splash.*
 
 /**
  *   @author xavijimenez
@@ -19,19 +20,12 @@ import com.xjm.weatherdoctors.presentation.dashboard.DashboardActivity
 class SplashActivity : AppCompatActivity() {
 
 // =====================================================================================================================
-// Attributes
-// =====================================================================================================================
-
-    var splashLottie: LottieAnimationView? = null
-
-// =====================================================================================================================
 // Config
 // =====================================================================================================================
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        bindViews()
         configAnimation()
     }
 
@@ -40,17 +34,10 @@ class SplashActivity : AppCompatActivity() {
 // =====================================================================================================================
 
     /**
-     * Called to bind views
-     */
-    private fun bindViews() {
-        splashLottie = findViewById(R.id.splash_lottie)
-    }
-
-    /**
      * Called to config the [LottieAnimationView]
      */
     private fun configAnimation() {
-        splashLottie?.addAnimatorListener(object : Animator.AnimatorListener {
+        splashLottie.addAnimatorListener(object : Animator.AnimatorListener {
             override fun onAnimationRepeat(animation: Animator?) {
                 //Nothing to do
             }
@@ -73,7 +60,7 @@ class SplashActivity : AppCompatActivity() {
      * Called to navigate to the [DashboardActivity] after animation finishes
      */
     private fun navigateToDashboard() {
-        startActivity(Intent(this@SplashActivity, DashboardActivity::class.java))
+        startActivity(Intent(this, DashboardActivity::class.java))
         overridePendingTransition(R.xml.fade_in, R.xml.fade_out)
     }
 }

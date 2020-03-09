@@ -23,7 +23,7 @@ class WeatherDoctorsApplication : Application() {
             androidContext(this@WeatherDoctorsApplication)
             modules(
                 listOf(
-                    repositoryModule, viewModelModule, useCaseModule, dataSourceModule
+                    repositoryModule, viewModelModule, useCaseModule, dataSourceModule, utilsModule
                 )
             )
         }

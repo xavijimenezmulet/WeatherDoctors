@@ -1,5 +1,9 @@
 package com.xjm.weatherdoctors.data
 
+import com.xjm.weatherdoctors.domain.model.Daily
+import com.xjm.weatherdoctors.domain.model.DarkSkyRequest
+import com.xjm.weatherdoctors.domain.model.DarkSkyResponse
+import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -20,8 +24,7 @@ interface WeatherDataSource {
         @Path("key") key: String,
         @Path("latitude") latitude: Double,
         @Path("longitude") longitude: Double,
-        @Query("units") units: String,
-        @Query("exclude") exclude: String
-    )
+        @Query("units") units: String
+    ): Call<DarkSkyResponse>
 
 }

@@ -10,12 +10,15 @@ import com.xjm.weatherdoctors.R
  *   @since 08/03/2020
  *   @version 1.0.0
  */
-object WeatherIconUtils {
+class WeatherIconUtils(private val context: Context) {
+
+
+    fun getIcon(iconKey: String?): Drawable? =  map(context)[iconKey]
 
     /**
      * Since the Dark Sky API response icon doesn't directly map to our drawables, we have to do so manually.
      */
-    fun map(context: Context): Map<String, Drawable> {
+    private fun map(context: Context): Map<String, Drawable> {
         val weatherIconMap = HashMap<String, Drawable>()
         weatherIconMap["clear-day"] = ContextCompat.getDrawable(context, R.drawable.ic_weather_clear_day)!!
         weatherIconMap["clear-night"] = ContextCompat.getDrawable(context, R.drawable.ic_weather_clear_night)!!
