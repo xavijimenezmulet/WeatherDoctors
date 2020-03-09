@@ -6,6 +6,11 @@ package com.xjm.weatherdoctors.domain.model
  *   @version 1.0.0
  */
 data class DarkSky(
+
+// =====================================================================================================================
+// Attributes
+// =====================================================================================================================
+
     val latitude: Double,
     val longitude: Double,
     val timezone: String,

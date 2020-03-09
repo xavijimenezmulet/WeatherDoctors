@@ -11,6 +11,10 @@ import retrofit2.http.Query
  */
 interface WeatherDataSource {
 
+// =====================================================================================================================
+// Api methods
+// =====================================================================================================================
+
     @GET("forecast/{key}/{latitude},{longitude}")
     fun getCurrentWeather(
         @Path("key") key: String,

@@ -15,6 +15,10 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 object RESTAdapter {
 
+// =====================================================================================================================
+// RESTAdapter methods
+// =====================================================================================================================
+
     /**
      * Method to create new service from given service class.
      * @param clazz service class.

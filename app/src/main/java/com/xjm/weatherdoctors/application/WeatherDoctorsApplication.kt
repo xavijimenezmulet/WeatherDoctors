@@ -12,6 +12,10 @@ import org.koin.core.context.startKoin
  */
 class WeatherDoctorsApplication : Application() {
 
+// =====================================================================================================================
+// Config && Koin
+// =====================================================================================================================
+
     override fun onCreate() {
         super.onCreate()
         startKoin {
