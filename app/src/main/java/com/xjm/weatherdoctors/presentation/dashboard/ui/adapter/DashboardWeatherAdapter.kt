@@ -1,6 +1,5 @@
-package com.xjm.weatherdoctors.presentation.dashboard
+package com.xjm.weatherdoctors.presentation.dashboard.ui.adapter
 
-import android.service.autofill.Dataset
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +8,8 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.xjm.weatherdoctors.R
-import com.xjm.weatherdoctors.commons.utils.WeatherIconUtils
+import com.xjm.weatherdoctors.commons.manager.WeatherIconManager
 import com.xjm.weatherdoctors.domain.model.Data
-import kotlinx.android.synthetic.main.activity_main.view.*
-import org.koin.java.KoinJavaComponent.inject
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -20,11 +17,29 @@ import java.util.*
  *   @author xavijimenez
  *   @since 09/03/2020
  *   @version 1.0.0
+ *
+ *   This adapter is used to fill the data from [com.xjm.weatherdoctors.presentation.dashboard.ui.view.DashboardActivity]
+ *   and get the list of week weather.
  */
 class DashboardWeatherAdapter(
     private var mDataSet: List<Data>,
-    private val iconUtils: WeatherIconUtils
-): RecyclerView.Adapter<DashboardWeatherAdapter.ViewHolder>() {
+    private val iconManager: WeatherIconManager
+) : RecyclerView.Adapter<DashboardWeatherAdapter.ViewHolder>() {
+
+// =====================================================================================================================
+// Attributes
+// =====================================================================================================================
+
+    companion object {
+        const val PATTERN = "EEEE"
+        const val REGION = "es"
+        const val COUNTRY = "ES"
+        const val TODAY = "Hoy"
+    }
+
+// =====================================================================================================================
+// Config
+// =====================================================================================================================
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
         ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_day_card, parent, false).apply {
@@ -40,19 +55,23 @@ class DashboardWeatherAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val day = if (position == 0) {
-            "Today"
+            TODAY
         } else {
             val date = Date(mDataSet[position].time * 1000)
-            val dateFormatter = SimpleDateFormat("EEEE", Locale.US)
-            dateFormatter.format(date)
+            val dateFormatter = SimpleDateFormat(PATTERN, Locale(REGION, COUNTRY))
+            dateFormatter.format(date).capitalize()
         }
 
         with(mDataSet[position]) {
             holder.title.text = day
-            holder.imageView.setImageDrawable(iconUtils.getIcon(icon))
+            holder.imageView.setImageDrawable(iconManager.getIcon(icon))
             holder.description.text = summary
         }
     }
+
+// =====================================================================================================================
+// View Holder
+// =====================================================================================================================
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.titleTextView)

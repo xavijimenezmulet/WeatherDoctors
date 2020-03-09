@@ -6,4 +6,6 @@
 
     <color name="materialGray_50">#FAFAFA</color>
     <color name="materialGray_500">#9E9E9E</color>
+
+    <color name="blackAlpha45">#73000000</color>
 </resources>

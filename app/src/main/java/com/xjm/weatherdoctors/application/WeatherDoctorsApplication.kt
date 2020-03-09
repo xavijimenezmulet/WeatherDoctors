@@ -1,6 +1,7 @@
 package com.xjm.weatherdoctors.application
 
 import android.app.Application
+import com.xjm.weatherdoctors.application.koin.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -23,7 +24,11 @@ class WeatherDoctorsApplication : Application() {
             androidContext(this@WeatherDoctorsApplication)
             modules(
                 listOf(
-                    repositoryModule, viewModelModule, useCaseModule, dataSourceModule, utilsModule
+                    repositoryModule,
+                    viewModelModule,
+                    useCaseModule,
+                    dataSourceModule,
+                    utilsModule
                 )
             )
         }

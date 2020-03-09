@@ -1,6 +1,5 @@
-package com.xjm.weatherdoctors.data
+package com.xjm.weatherdoctors.data.service
 
-import com.xjm.weatherdoctors.domain.model.Daily
 import com.xjm.weatherdoctors.domain.model.DarkSkyRequest
 import com.xjm.weatherdoctors.domain.model.DarkSkyResponse
 import retrofit2.Call
@@ -20,6 +19,8 @@ class WeatherRepository(private val dataSource: WeatherDataSource) {
 
     companion object {
         const val API_KEY = "d34d5bc5f63fd0b05110dd9a4cb92b97"
+        const val UNIT_US = "us"
+        const val LANGUAGE = "es"
     }
 
 // =====================================================================================================================
@@ -34,7 +35,8 @@ class WeatherRepository(private val dataSource: WeatherDataSource) {
         key = API_KEY,
         latitude = model.latitude,
         longitude = model.longitude,
-        units = "us"
+        units = UNIT_US,
+        lang = LANGUAGE
     ).enqueue(object : Callback<DarkSkyResponse> {
         override fun onFailure(call: Call<DarkSkyResponse>, t: Throwable) = onError.invoke(t)
 

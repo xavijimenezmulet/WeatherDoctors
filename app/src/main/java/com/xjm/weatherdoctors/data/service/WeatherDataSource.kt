@@ -1,4 +1,4 @@
-package com.xjm.weatherdoctors.data
+package com.xjm.weatherdoctors.data.service
 
 import com.xjm.weatherdoctors.domain.model.Daily
 import com.xjm.weatherdoctors.domain.model.DarkSkyRequest
@@ -24,7 +24,8 @@ interface WeatherDataSource {
         @Path("key") key: String,
         @Path("latitude") latitude: Double,
         @Path("longitude") longitude: Double,
-        @Query("units") units: String
+        @Query("units") units: String,
+        @Query("lang") lang: String
     ): Call<DarkSkyResponse>
 
 }

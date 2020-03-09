@@ -1,11 +1,11 @@
-package com.xjm.weatherdoctors.application
+package com.xjm.weatherdoctors.application.koin
 
-import com.xjm.weatherdoctors.commons.utils.WeatherIconUtils
-import com.xjm.weatherdoctors.data.WeatherDataSource
-import com.xjm.weatherdoctors.data.WeatherRepository
+import com.xjm.weatherdoctors.commons.manager.WeatherIconManager
+import com.xjm.weatherdoctors.data.service.WeatherDataSource
+import com.xjm.weatherdoctors.data.service.WeatherRepository
 import com.xjm.weatherdoctors.domain.REST.RESTAdapter
-import com.xjm.weatherdoctors.interactors.GetWeatherUseCase
-import com.xjm.weatherdoctors.presentation.dashboard.DashboardViewModel
+import com.xjm.weatherdoctors.interactors.usecase.GetWeatherUseCase
+import com.xjm.weatherdoctors.presentation.dashboard.ui.viewmodel.DashboardViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -54,5 +54,5 @@ val dataSourceModule = module(override = true) {
 // =====================================================================================================================
 
 val utilsModule = module(override = true) {
-    single { WeatherIconUtils(get()) }
+    single { WeatherIconManager(get()) }
 }

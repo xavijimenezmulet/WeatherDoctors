@@ -1,4 +1,4 @@
-package com.xjm.weatherdoctors.presentation.splash
+package com.xjm.weatherdoctors.presentation.splash.ui.view
 
 import android.animation.Animator
 import android.content.Intent
@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.lottie.LottieAnimationView
 import com.xjm.weatherdoctors.R
-import com.xjm.weatherdoctors.presentation.dashboard.DashboardActivity
+import com.xjm.weatherdoctors.presentation.dashboard.ui.view.DashboardActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
 /**
@@ -62,5 +62,6 @@ class SplashActivity : AppCompatActivity() {
     private fun navigateToDashboard() {
         startActivity(Intent(this, DashboardActivity::class.java))
         overridePendingTransition(R.xml.fade_in, R.xml.fade_out)
+        finish()
     }
 }
