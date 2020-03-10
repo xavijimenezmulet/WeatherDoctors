@@ -21,12 +21,13 @@ It is used to show the current weather from current location
 * Constraint Layout
 * Recyclerview
 * Materials
+* SwipeRefreshLayout
 
 # Project structure
 
 This app has been developed in Kotlin language. 
 
-It uses MVVM pattern and has been designed to be modular and scalable, being able to add new features or remove existing without need to change code or break any dependency created. Also implements the adaptive icons,
+It uses MVVM pattern and has been designed to be modular and scalable, being able to add new features or remove existing without need to change code or break any dependency created. Also implements the adaptive icons.
 
 App layers are:
 
