@@ -35,7 +35,7 @@ class DashboardActivity : AppCompatActivity() {
 
     private val iconManager: WeatherIconManager by inject()
 
-    // =====================================================================================================================
+// =====================================================================================================================
 // View Model
 // =====================================================================================================================
     private val viewModel: DashboardViewModel by viewModel()
@@ -69,6 +69,11 @@ class DashboardActivity : AppCompatActivity() {
      */
     private fun initData() {
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
+        swipeContainer.setOnRefreshListener {
+            loadData()
+            swipeContainer.isRefreshing = false
+        }
 
         appLoader?.showLoader()
         loadData()
