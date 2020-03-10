@@ -3,4 +3,7 @@
 
     <string name="menuToolbar_searchTitle">Búsqueda</string>
     <string name="mainActivity_weeklyForecast">Tiempo semanal</string>
+
+    <string name="alert_dialog_title">Error de servicio</string>
+    <string name="alert_dialog_msg">¡Vaya! Parece que el servicio ha fallado..</string>
 </resources>

@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         tools:context=".presentation.dashboard.ui.view.DashboardActivity">
 
-    <com.xjm.weatherdoctors.commons.loader.AppLoader
+    <com.xjm.weatherdoctors.commons.ui.loader.AppLoader
             app:layout_constraintRight_toLeftOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:visibility="gone">
 
-    </com.xjm.weatherdoctors.commons.loader.AppLoader>
+    </com.xjm.weatherdoctors.commons.ui.loader.AppLoader>
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/weatherContainer"

@@ -13,6 +13,7 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.xjm.weatherdoctors.R
 import com.xjm.weatherdoctors.commons.manager.WeatherIconManager
+import com.xjm.weatherdoctors.commons.ui.dialog.PopUp
 import com.xjm.weatherdoctors.domain.model.DarkSkyResponse
 import com.xjm.weatherdoctors.presentation.dashboard.ui.viewmodel.DashboardViewModel
 import com.xjm.weatherdoctors.presentation.dashboard.ui.adapter.DashboardWeatherAdapter
@@ -90,7 +91,7 @@ class DashboardActivity : AppCompatActivity() {
 
                         viewModel.getWeather(latitude, longitude).observe(this@DashboardActivity, Observer { daily ->
                             if (daily == null) {
-                                //TODO(Show pop up)
+                                PopUp.showDialogError(this)
                             } else {
                                 with(recyclerView) {
                                     layoutManager = LinearLayoutManager(

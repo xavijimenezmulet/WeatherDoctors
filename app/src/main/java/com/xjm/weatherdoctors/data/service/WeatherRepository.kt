@@ -10,6 +10,8 @@ import retrofit2.Response
  *   @author xavijimenez
  *   @since 05/03/2020
  *   @version 1.0.0
+ *
+ *   This class is a Weather repository that is used to call the data source , called by use case
  */
 class WeatherRepository(private val dataSource: WeatherDataSource) {
 
@@ -27,6 +29,9 @@ class WeatherRepository(private val dataSource: WeatherDataSource) {
 // Service methods
 // =====================================================================================================================
 
+    /**
+     * Called to get the current weather and get the callback
+     */
     suspend fun getCurrentWeather(
         model: DarkSkyRequest,
         onSuccess: (daily: DarkSkyResponse?) -> Unit,

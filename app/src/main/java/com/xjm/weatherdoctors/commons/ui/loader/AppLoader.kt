@@ -1,4 +1,4 @@
-package com.xjm.weatherdoctors.commons.loader
+package com.xjm.weatherdoctors.commons.ui.loader
 
 import android.animation.Animator
 import android.content.Context
