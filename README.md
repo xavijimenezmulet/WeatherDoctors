@@ -46,14 +46,14 @@ Description: Develop a very simple App that shows a list of the weather in the c
 * 3. View using ConstraintLayout
 
  
-**Additional:
+**Additional:**
 
 * · MMVM model using Android JetPackt architecture components
 
 * · Use of Koin for dependency injection
 
 
-**Objectives:
+**Objectives:**
 
 * · How to program, code cleaning, comments etc.
 
