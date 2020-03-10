@@ -26,7 +26,7 @@ It is used to show the current weather from current location
 
 This app has been developed in Kotlin language. 
 
-It uses MVVM pattern and has been designed to be modular and scalable, being able to add new features or remove existing without need to change code or break any dependency created
+It uses MVVM pattern and has been designed to be modular and scalable, being able to add new features or remove existing without need to change code or break any dependency created. Also implements the adaptive icons,
 
 App layers are:
 
@@ -39,26 +39,26 @@ App layers are:
 
 Description: Develop a very simple App that shows a list of the weather in the current week (one screen and in portrait). The App must meet at least the following:
 
-1. Be developed in Kotlin
+* 1. Be developed in Kotlin
 
-2. Integration with a free API using Retrofit 2. You can use any of https://github.com/public-apis/public-apis#weather
+* 2. Integration with a free API using Retrofit 2. You can use any of https://github.com/public-apis/public-apis#weather
 
-3. View using ConstraintLayout
+* 3. View using ConstraintLayout
 
  
-Additional:
+**Additional:
 
-· MMVM model using Android JetPackt architecture components
+* · MMVM model using Android JetPackt architecture components
 
-· Use of Koin for dependency injection
+* · Use of Koin for dependency injection
 
 
-Objectives:
+**Objectives:
 
-· How to program, code cleaning, comments etc.
+* · How to program, code cleaning, comments etc.
 
-· Library knowledge
+* · Library knowledge
 
-· Knowledge of design patterns and architectures
+* · Knowledge of design patterns and architectures
 
-· Project structuring and use of Gradle
+* · Project structuring and use of Gradle
