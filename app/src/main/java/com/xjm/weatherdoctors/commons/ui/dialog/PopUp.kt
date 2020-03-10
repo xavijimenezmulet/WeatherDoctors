@@ -2,6 +2,7 @@ package com.xjm.weatherdoctors.commons.ui.dialog
 
 import android.content.Context
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.xjm.weatherdoctors.R
 
 /**
@@ -26,6 +27,24 @@ object PopUp {
         builder.setTitle(context.getString(R.string.alert_dialog_title))
         builder.setMessage(context.getString(R.string.alert_dialog_msg))
         builder.setPositiveButton(android.R.string.yes) { dialog, which ->
+            //Nothing to do
+        }
+
+        builder.show()
+    }
+
+    /**
+     * Called to show a dialog exit to finish all activities
+     * @param activity the current activity
+     */
+    fun showExit(activity: AppCompatActivity) {
+        val builder = AlertDialog.Builder(activity)
+        builder.setTitle(activity.getString(R.string.alert_dialog_title_exit))
+        builder.setMessage(activity.getString(R.string.alert_dialog_msg_exit))
+        builder.setPositiveButton(android.R.string.yes) { dialog, which ->
+            activity.finishAffinity()
+        }
+        builder.setNegativeButton(android.R.string.no) { dialog, which ->
             //Nothing to do
         }
 

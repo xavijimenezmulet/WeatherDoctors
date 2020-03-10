@@ -26,6 +26,9 @@ import timber.log.Timber
  *   @author xavijimenez
  *   @since 05/03/2020
  *   @version 1.0.0
+ *
+ *   This activity is the main of the application it will show the weather view. Helped by [DashboardViewModel] that will
+ *   have the logic and will help to fill the data.
  */
 class DashboardActivity : AppCompatActivity() {
 
@@ -35,7 +38,7 @@ class DashboardActivity : AppCompatActivity() {
 
     private val iconManager: WeatherIconManager by inject()
 
-// =====================================================================================================================
+    // =====================================================================================================================
 // View Model
 // =====================================================================================================================
     private val viewModel: DashboardViewModel by viewModel()
@@ -165,6 +168,13 @@ class DashboardActivity : AppCompatActivity() {
         } else {
             Timber.v("User refused to give location permission. Continue using the default location.")
         }
+    }
+
+    /**
+     * Show an exit pop up to get more user experience
+     */
+    override fun onBackPressed() {
+        PopUp.showExit(this)
     }
 
 }

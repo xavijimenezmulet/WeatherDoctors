@@ -6,4 +6,6 @@
 
     <string name="alert_dialog_title">Error de servicio</string>
     <string name="alert_dialog_msg">¡Vaya! Parece que el servicio ha fallado..</string>
+    <string name="alert_dialog_title_exit">Salir de la aplicación</string>
+    <string name="alert_dialog_msg_exit">¿Estás seguro de salir de la aplicación?</string>
 </resources>
