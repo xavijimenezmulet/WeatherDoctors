@@ -1,6 +1,7 @@
 # WeatherDoctors
 
-It is used to show the current weather from current location
+It is used to show the current weather from current location 
+Api Reference: https://api.darksky.net
 
 # Third-party libraries used
 
